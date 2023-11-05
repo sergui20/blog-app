@@ -1,3 +1,8 @@
+/**
+ * 1.2: Setting up the core pages.
+ * Contact form page which users can fill out. We could add this page inside a folder,
+ * but we are pretty sure the contact page won't have more route segments.
+ */
 import { Fragment } from 'react';
 import Head from 'next/head';
 

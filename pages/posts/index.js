@@ -1,3 +1,7 @@
+/**
+ * 1.3: Setting up the core pages.
+ * Page to display all blog posts.
+ */
 import Head from 'next/head';
 import { Fragment } from 'react';
 

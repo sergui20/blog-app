@@ -1,3 +1,8 @@
+/**
+ * 1.1: Setting up the core pages.
+ * This is the starting page which shows the featured blog posts and a little
+ * welcome message.
+ */
 import { Fragment } from 'react';
 import Head from 'next/head';
 
