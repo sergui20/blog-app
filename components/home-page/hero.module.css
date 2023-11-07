@@ -1,3 +1,9 @@
+/* 2.4: Getting started with the Homepage.
+  In here we are using a feature called CSS variables. In which we use certain values
+  like "--color", but also "--size" and dimensions from CSS variables. And these 
+  CSS variables are defined in the Globals CSS file.
+  Now this is totally independent from Next.js This is a default CSS feature.
+*/
 .hero {
   text-align: center;
   background-image: linear-gradient(
