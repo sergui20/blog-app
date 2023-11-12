@@ -6,6 +6,9 @@
  * to take advantage of automatic data prefetching which it does for us, 
  * and to take advantage of the fact that we stay in a single-page application 
  * once the page was loaded initially.
+ * 
+ * 5.1: Adding Styling and a Logo component.
+ * In this lesson, we added the CSS styles for the header in our main navigation.
  */
 import Link from 'next/link';
 
