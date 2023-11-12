@@ -13,7 +13,7 @@ import Image from 'next/image';
 import classes from './post-item.module.css';
 
 function PostItem(props) {
-  const { title, image, excerpt, date, slug } = props.post;
+  const { title, image, excerpt, date, slug } = props.post; // 'excerp' is just a short preview text.
 
   const formattedDate = new Date(date).toLocaleDateString('en-US', {
     day: 'numeric',
@@ -34,7 +34,7 @@ function PostItem(props) {
               alt={title}
               width={300}
               height={200}
-              layout='responsive'
+              layout='responsive' // 'responsive' was necessary to shrink and grow the images based on the screen size, instead of leaving just the default 'intrinsic' in which the images will always have the same size. Learn more in "2-Lesson 8 - page overview.docx".
             />
           </div>
           <div className={classes.content}>
