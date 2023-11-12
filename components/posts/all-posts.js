@@ -1,3 +1,7 @@
+/**
+ * 9.2: Building the "All Posts" page.
+ * This is just a "<section>" where we reuse our "PostsGrid" component.
+ */
 import classes from './all-posts.module.css';
 import PostsGrid from './posts-grid';
 

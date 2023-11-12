@@ -1,6 +1,9 @@
 /**
  * 1.3: Setting up the core pages.
  * Page to display all blog posts.
+ * 
+ * 9.1: Building the "All Posts" page.
+ * So, in this page we want to fetch all posts from the database and display them.
  */
 import Head from 'next/head';
 import { Fragment } from 'react';
