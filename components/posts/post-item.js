@@ -1,3 +1,12 @@
+/**
+ * 7.1: Adding the Post Item component.
+ * In here, we want to render just an individual post and this component
+ * will be rendered from outisde for each post comming fron the server.
+ * 
+ * We formatted the date to make sure we display in a more friendly way to the users.
+ * The image we set with width 300 and 200 will produce good looking image even for higher
+ * screens. So, it wasn't necessary to set more width and height.
+ */
 import Link from 'next/link';
 import Image from 'next/image';
 
