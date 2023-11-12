@@ -1,3 +1,8 @@
+/**
+ * 6.2: Starting to work on the "Featured Posts" part.
+ * This is simply a CSS Grid with a fixed width for each colum and we are rendering
+ * a PostItem component.
+ */
 import PostItem from './post-item';
 import classes from './posts-grid.module.css';
 
