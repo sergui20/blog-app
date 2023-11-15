@@ -1,3 +1,22 @@
+/**
+ * 10.1: Adding the "Post Detail" page.
+ * So in here we want to output the content of a selected post. That includes 
+ * a header with the title and maybe the image. Now later, we will actually 
+ * get the post content as "Markdown". You'll see it in a couple of minutes 
+ * and we'll then translate that Markdown to React JSX elements.
+ * And we use Markdown here because it's less code than if we would use HTML 
+ * and it can be translated into HTML or into JSX easily with third-party packages, 
+ * which we'll add later.
+ * 
+ * This is how we will receive a post in the props:
+ *  post = {
+      slug: 'getting-started-with-nextjs',
+      title: 'Getting Started with NextJS',
+      image: 'getting-started-nextjs.png',
+      date: '2022-02-10',
+      content: '# This is a first post' <- So, the goal is to translate this string from Markdown into JSX which we'll do in the next lecture.
+    }
+ */
 import ReactMarkdown from 'react-markdown';
 import Image from 'next/image';
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';

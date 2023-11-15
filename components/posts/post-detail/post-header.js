@@ -1,3 +1,7 @@
+/**
+ * 10.2: Adding the "Post Detail" page.
+ * This is our Header component for our posts. They have a h1 title with an image.
+ */
 import Image from 'next/image';
 
 import classes from './post-header.module.css';

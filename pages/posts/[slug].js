@@ -22,6 +22,7 @@ function PostDetailPage(props) {
         <title>{props.post.title}</title>
         <meta name='description' content={props.post.excerpt} />
       </Head>
+      {/* 10.3: Adding the "Post Detail" page.*/}
       <PostContent post={props.post} />
     </Fragment>
   );
