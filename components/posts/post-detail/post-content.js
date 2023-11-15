@@ -17,6 +17,11 @@
       content: '# This is a first post' <- So, the goal is to translate this string from Markdown into JSX which we'll do in the next lecture.
     }
  */
+
+/**
+ * 11.1: Rendering Markdown as JSX.
+ * Let's install this npm package which takes Markdown and outputs JSX.
+ */
 import ReactMarkdown from 'react-markdown';
 import Image from 'next/image';
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -82,6 +87,7 @@ function PostContent(props) {
   return (
     <article className={classes.content}>
       <PostHeader title={post.title} image={imagePath} />
+      {/* 11.2: Rendering Markdown as JSX. */}
       <ReactMarkdown renderers={customRenderers}>{post.content}</ReactMarkdown>
     </article>
   );
