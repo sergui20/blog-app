@@ -44,6 +44,21 @@ function HomePage(props) {
   );
 }
 
+/**
+ * 13.1: Using Markdown data for rendering posts.
+ * Makes most sense to use "getStaticProps" since we want the browsers to index
+ * our data, our featured posts to be precise. We didn't choose to build and API
+ * and fetch the data client-side using "useEffect" for two reasons:
+ *  - We don't have our Markdown files indexed in a database.
+ *  - There is no point in putting more development effort in building a API if we
+ *    can pre-generate the page easily.
+ *  
+ * Besides, using "getServerSideProps" wouldn't also make sense since we will have to
+ * go over all our Markdown files per every request and that will 
+ * slow down our web page. Our MD files won't change so often, adding a "revalidate"
+ * key is also not necessary. We are fine with redeploying every time we modify any
+ * of our MD files.
+ */
 export function getStaticProps() {
   const featuredPosts = getFeaturedPosts();
 

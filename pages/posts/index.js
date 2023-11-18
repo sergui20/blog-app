@@ -26,6 +26,12 @@ function AllPostsPage(props) {
   );
 }
 
+/**
+ * 13.2: Using Markdown data for rendering posts.
+ * Let's do something very similar as what we did in the Homepage. Let's load all
+ * our MD files into the "All Posts" page using "getStaticProps". We are fine
+ * rebuilding and redeploying per every modification we do.
+ */
 export function getStaticProps() {
   const allPosts = getAllPosts();
 
