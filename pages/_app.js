@@ -15,6 +15,9 @@ import Layout from '../components/layout/layout';
 function MyApp({ Component, pageProps }) {
   return (
     <Layout>
+      {/* 21.1: Adding "Head" medatata. 
+        We want to apply the same viewport config for all our pages.
+      */}
       <Head>
         <meta name='viewport' content='width=device-width, initial-scale=1' />
       </Head>

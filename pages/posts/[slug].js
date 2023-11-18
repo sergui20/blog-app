@@ -18,6 +18,10 @@ import { getPostData, getPostsFiles } from '../../lib/posts-util';
 function PostDetailPage(props) {
   return (
     <Fragment>
+      {/* 21.5: Adding "Head" medatata.
+        In here we want to set the title dynamically based on the title of the post.
+        And same thing for the description.
+      */}
       <Head>
         <title>{props.post.title}</title>
         <meta name='description' content={props.post.excerpt} />

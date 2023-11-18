@@ -11,6 +11,9 @@ import ContactForm from '../components/contact/contact-form';
 function ContactPage() {
   return (
     <Fragment>
+      {/* 21.3: Adding "Head" medatata.
+        Same thing for our contact page.
+      */}
       <Head>
         <title>Contact Me</title>
         <meta name='description' content='Send me your messages!' />

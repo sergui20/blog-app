@@ -14,6 +14,9 @@ import { getAllPosts } from '../../lib/posts-util';
 function AllPostsPage(props) {
   return (
     <Fragment>
+      {/* 21.4: Adding "Head" medatata.
+        Same thing for all posts page.
+      */}
       <Head>
         <title>All Posts</title>
         <meta

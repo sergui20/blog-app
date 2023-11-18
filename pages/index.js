@@ -23,6 +23,9 @@ function HomePage(props) {
    */
   return (
     <Fragment>
+      {/* 21.2: Adding "Head" medatata.
+        Let's change the title only for this page and description.
+      */}
       <Head>
         <title>Max' Blog</title>
         <meta
