@@ -26,6 +26,11 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          {/* 23.1: Using React portals.
+            We could add a div here to inject elements or as we called a portal.
+            Review the document "Lesson 20 - Using React portals.docx" to learn more
+            about React portals.
+           */}
           <div id="notifications"></div>
         </body>
       </Html>
