@@ -47,10 +47,26 @@ function ContactForm() {
     }
   }, [requestStatus]);
 
+  /**
+   * 18.1: Sending data from client to our Contact API route.
+   * We need to send the entered email, name, and message we've collected from this
+   * form.
+   * 
+   * After wiring up the data we've collected from the form we only got two main 
+   * steps left, two main tasks which we have to tackle. We probably 
+   * wanna show some feedback to the user on the front-end like a notification 
+   * when the request is on its way, when it succeeded, or when it failed.
+   * And of course, we wanna store the data in the actual database. We'll do that
+   * in next lectures.
+   */
   async function sendMessageHandler(event) {
     event.preventDefault();
 
-    // optional: add client-side validation
+    /**
+     * optional: Add client-side validation. You could add because client-side
+     * validation helps you having full control on what error messages you want
+     * to display, maybe even better than server-side.
+     */
 
     setRequestStatus('pending');
 
