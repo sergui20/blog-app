@@ -1,9 +1,20 @@
+/**
+ * 17.1: Adding our contact API route.
+ * This creates a new endpoint "/api/contact".
+ */
 import { MongoClient } from 'mongodb';
 
+/**
+ * This is the standard on how to build this endpoint.
+ * We always have a handler which receives 'req' and 'res'. Similar to express handlers.
+ * @param {*} req 
+ * @param {*} res 
+ */
 async function handler(req, res) {
   if (req.method === 'POST') {
     const { email, name, message } = req.body;
 
+    // Validate our data. Make sure users always send data.
     if (
       !email ||
       !email.includes('@') ||
