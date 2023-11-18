@@ -94,7 +94,14 @@ function PostContent(props) {
 
       return <p>{paragraph.children}</p>; // So, notice that for the rest of the content we still want to render them as <p> tags.
     },
-
+    /**
+     * 15.1: Rendering code snippets from Markdown.
+     * So, let's define this 'code' renderer to define how code snippets should be
+     * rendered in our website.
+     * 
+     * 'SyntaxHighlighter' is a great component for rendering code snippets in a nice
+     * way. We are using a dark theme.
+     */
     code(code) {
       const { language, value } = code;
       return (
