@@ -36,6 +36,9 @@ function ContactForm() {
   const [requestStatus, setRequestStatus] = useState(); // 'pending', 'success', 'error'
   const [requestError, setRequestError] = useState();
 
+
+  // Check the "requestStatus" to clear our the notification after 3 seconds
+  // if the request is a success or error.
   useEffect(() => {
     if (requestStatus === 'success' || requestStatus === 'error') {
       const timer = setTimeout(() => {
@@ -86,6 +89,7 @@ function ContactForm() {
     }
   }
 
+  // So, depending on the status of a request we set up our notification.
   let notification;
 
   if (requestStatus === 'pending') {
@@ -153,6 +157,13 @@ function ContactForm() {
           <button>Send Message</button>
         </div>
       </form>
+      {/* 20.2: Adding notification feedback when posting messages to the API.
+      'pending', 'success', 'error' are the possible values the notification status
+      can have.
+
+      We could break this Contact form components into smaller components since it is
+      getting bigger.
+      */}
       {notification && (
         <Notification
           status={notification.status}
