@@ -35,11 +35,34 @@ import classes from './post-content.module.css';
 SyntaxHighlighter.registerLanguage('js', js);
 SyntaxHighlighter.registerLanguage('css', css);
 
+/**
+ * 12.1: 
+ * To be precise, let's see how we could add images or code snippets to this content 
+ * because since we're building a blog and we are developers, we might be blogging about development topics
+ * and that means that we also might wanna share code snippets as part of our posts.
+ * 
+ * If we just leave 'react-markdown' render images on its own we won't taking advantage 
+ * of Next.js image optimizations. You will see that a regular <image> element, will be rendered. And that is "okay",
+ * but we give up on all the optimization potential. For example, this is a huge image file, it's huge
+ * and even if we change the size in CSS, we still load the original file. And that's definitely not what we want.
+ * Lazy loading would also be nice to have, to optimize our website.
+ */
 function PostContent(props) {
   const { post } = props;
 
   const imagePath = `/images/posts/${post.slug}/${post.image}`;
 
+  /**
+   * We had to override how "react-markdown" treats Markdown content like images.
+   * To override how certain elements are rendered, we can pass "react-markdown" an image key and define how
+   * we should render.
+   * 
+   * The problem with the "image" renderer is that we will get several warnings since we are rendering images inside
+   * <p> tags, because everything we read from Markdown using the "react-markdown" library is retrieved as a content.
+   * 
+   * So, let's customize how all paragraphs or contents should be rendered instead. We basically want to just override
+   * the default if the content is an "image" and leave the default renderer to the rest of the contents.
+   */
   const customRenderers = {
     // image(image) {
     //   return (
@@ -54,7 +77,7 @@ function PostContent(props) {
     paragraph(paragraph) {
       const { node } = paragraph;
 
-      if (node.children[0].type === 'image') {
+      if (node.children[0].type === 'image') { // Only customize the renderer for images.
         const image = node.children[0];
 
         return (
@@ -69,7 +92,7 @@ function PostContent(props) {
         );
       }
 
-      return <p>{paragraph.children}</p>;
+      return <p>{paragraph.children}</p>; // So, notice that for the rest of the content we still want to render them as <p> tags.
     },
 
     code(code) {
