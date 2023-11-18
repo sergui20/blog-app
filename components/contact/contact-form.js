@@ -1,3 +1,13 @@
+/**
+ * 16.1: Building our Contact form.
+ * The goal now is that when we send our form, we send it to an API route, 
+ * and then there, we store it in a database. We don't directly talk to a database 
+ * in here as we learned, because if we would do so, if we would add code 
+ * for talking to a database in the contact form component, then we would have 
+ * to put our database credentials into this component as well. 
+ * And we don't wanna do that for security reasons. Hence, we'll do it the other way 
+ * and add our API route plus the code to talk to that API route.
+ */
 import { useState, useEffect } from 'react';
 
 import classes from './contact-form.module.css';
