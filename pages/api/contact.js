@@ -35,6 +35,17 @@ async function handler(req, res) {
 
     let client;
 
+    /**
+     * 19.1: Storing our messages to MongoDB.
+     * So let's add a real database now. And for this, we'll again use MongoDB, 
+     * because it's easy to use, very popular, scalable, works great with JavaScript,
+     * and we can get started for free.
+     * 
+     * First, install "mongodb" npm package. Then, as you can see below we want to
+     * connecto to MongoDB after we've validated the data from the client. You
+     * need to get the "connection string" from the MongoDB console and plug in your
+     * database credentials.
+     */
     const connectionString = `mongodb+srv://${process.env.mongodb_username}:${process.env.mongodb_password}@${process.env.mongodb_clustername}.ntrwp.mongodb.net/${process.env.mongodb_database}?retryWrites=true&w=majority`;
 
     try {
@@ -43,10 +54,15 @@ async function handler(req, res) {
       res.status(500).json({ message: 'Could not connect to database.' });
       return;
     }
-
+    
+    // In here you could also switch to a different database by passing its name 
+    // as an argument.
     const db = client.db();
 
     try {
+      // Now in MongoDB, data is stored in so-called connections, 
+      // and hence the db object has a collection method which allows us to work 
+      // on a specific collection.
       const result = await db.collection('messages').insertOne(newMessage);
       newMessage.id = result.insertedId;
     } catch (error) {
